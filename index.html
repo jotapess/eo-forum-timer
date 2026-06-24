@@ -162,6 +162,26 @@
   .bigstart{width:100%;padding:20px;border-radius:18px;background:var(--accent);color:#fff;font-weight:800;font-size:19px}
   .bigstart:active{filter:brightness(.92)}
 
+  /* Help */
+  #help{max-width:680px;margin:0 auto;padding:0 16px 60px}
+  .helpHead{display:flex;align-items:center;gap:12px;position:sticky;top:0;background:var(--bg);padding:14px 0 12px;z-index:2;border-bottom:1px solid var(--line);margin-bottom:6px}
+  .helpHead .x{width:40px;height:40px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-size:20px;flex:0 0 auto}
+  .helpHead h2{font-size:19px;margin:0}
+  .help h3{font-size:16px;margin:26px 0 6px;color:var(--txt);display:flex;align-items:center;gap:8px}
+  .help h3 .n{width:24px;height:24px;border-radius:7px;background:var(--accent);color:#fff;font-size:13px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .help p{color:var(--muted);font-size:15px;line-height:1.55;margin:8px 0}
+  .help li{color:var(--muted);font-size:15px;line-height:1.5;margin:7px 0}
+  .help b,.help strong{color:var(--txt);font-weight:700}
+  .help ol,.help ul{padding-left:22px;margin:8px 0}
+  .help .card2{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:4px 16px 14px;margin:12px 0}
+  .help table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+  .help th,.help td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .help th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+  .help td b{color:var(--txt)}
+  .chip{display:inline-block;padding:3px 9px;border-radius:7px;font-size:12.5px;font-weight:800;color:#fff;white-space:nowrap}
+  .help .lead{color:var(--txt);font-size:15.5px;line-height:1.55}
+  .help .quote{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:8px 0;color:var(--txt);font-style:italic}
+
   /* End summary */
   #end{max-width:640px;margin:0 auto;padding:20px 16px 40px}
   #end h2{font-size:24px}
@@ -183,6 +203,7 @@
   <div class="head">
     <img class="logo" src="eo-icon.png" alt="EO" />
     <h1>Forum Timer</h1>
+    <button class="iconbtn" id="helpTop" title="How to use">?</button>
     <button class="iconbtn" id="shareTop" title="Copy share link">🔗</button>
   </div>
 
@@ -281,6 +302,79 @@
   <div class="acts" style="margin-top:24px">
     <button class="btn ghost" id="endEdit">Edit schedule</button>
     <button class="btn primary" id="endRestart">Run again</button>
+  </div>
+</div>
+
+<!-- ============ HELP ============ -->
+<div id="help" class="hidden">
+  <div class="helpHead">
+    <button class="x" id="helpBack">←</button>
+    <h2>How to use Forum Timer</h2>
+  </div>
+  <div class="help">
+    <p class="lead">A full-screen timer for running an EO Forum meeting. You build a schedule, then run it activity by activity with big, room-visible countdowns. There are no accounts and no names — the whole schedule lives in the link.</p>
+
+    <h3><span class="n">1</span> Running a meeting</h3>
+    <p>You (the timekeeper) stay in control — nothing advances on its own.</p>
+    <ol>
+      <li>From the home screen, tap <b>Start meeting</b>.</li>
+      <li>You'll see a <b>“Get ready”</b> screen with the next activity and a big <b>Start</b> button. The timer doesn't run until you tap it — so you can wait until the group is actually ready.</li>
+      <li>When running, the screen fills with a colored bar that shrinks as time passes, plus a large countdown.</li>
+      <li>At zero, you hear a chime and it starts counting <b>up</b> (e.g. <b>+1:30</b>) so you can see how far over you are. It does <b>not</b> flash or jump ahead.</li>
+      <li>Tap <b>Done</b> / <b>Next</b> to finish the activity. You land back on a “Get ready” screen for the next one — tap <b>Start</b> when ready.</li>
+    </ol>
+    <p>While you run, the screen shows whether you're <b style="color:var(--good)">ahead of schedule</b> or <b style="color:var(--danger)">behind schedule</b>, and a projected end time, so you can speed up or relax.</p>
+
+    <h3><span class="n">2</span> Per-person activities</h3>
+    <p>For activities that are split per person, the screen shows <b>one vertical bar per person</b>, numbered. The current person's bar drains; finished people empty out; upcoming people stay dimmed.</p>
+    <p>After each person's time, it <b>pauses and waits</b> on a “Start Person&nbsp;N” screen. You tap to begin the next person. This gives you a beat to hand off cleanly instead of racing through everyone automatically.</p>
+
+    <h3><span class="n">3</span> Setting up your schedule</h3>
+    <div class="card2">
+      <ul>
+        <li><b>Default participants</b> — how many people are in the room. Activities set to “Everyone” divide by this number.</li>
+        <li><b>Add or insert</b> — tap <b>＋ Add activity</b> at the bottom, or the small <b>＋</b> between any two activities to insert one exactly there.</li>
+        <li><b>Reorder</b> — drag the <b>⠿</b> handle on the left of a card (works on phone and computer). A dashed outline shows where it'll land before you let go.</li>
+        <li><b>Color &amp; notes</b> — tap the color swatch to recolor an activity. Add a note/suggestion; it appears on the “Get ready” screen during the meeting.</li>
+        <li><b>Save &amp; share</b> — tap <b>Copy link</b>. The entire schedule is encoded in the URL, so paste it anywhere to reload or send it to a co-chair. It also remembers your last setup automatically on this device.</li>
+        <li><b>Reset to standard</b> — restores the standard EO Forum agenda (asks you to confirm first).</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">4</span> The three timer types</h3>
+    <p>The difference is about <b>what stays constant</b> when your headcount changes.</p>
+    <p><span class="chip" style="background:#5E617D">Fixed</span> &nbsp;One timer for the whole block. You enter a total time; headcount doesn't matter. Use it for opening rituals, breaks, a deep dive (one person presenting to the group), and closing.</p>
+    <p><span class="chip" style="background:#3D46F2">Everyone</span> &nbsp;You enter the <b>total</b> time and it's split across all participants, running one mini-timer per person. <b>The total stays fixed; each person's share grows or shrinks with headcount.</b> Use it when the clock is the constraint — “check-ins get 45 minutes, divide it fairly.”</p>
+    <p><span class="chip" style="background:#1EA691">Per person</span> &nbsp;You enter the time <b>each person</b> gets, and the total grows with headcount. <b>Each person's time stays fixed; the block gets longer or shorter.</b> Use it when fairness-per-head is the constraint — “everyone gets exactly 3 minutes, however long that takes.”</p>
+    <table>
+      <tr><th>Type</th><th>You enter</th><th>When people change…</th></tr>
+      <tr><td><b>Fixed</b></td><td>Total time</td><td>Nothing changes</td></tr>
+      <tr><td><b>Everyone</b></td><td><b>Total</b> time</td><td>Each person's share changes; total stays</td></tr>
+      <tr><td><b>Per&nbsp;person</b></td><td>Time <b>each</b></td><td>Total changes; each person's time stays</td></tr>
+    </table>
+    <p class="quote">Everyone and Per person are mirror images — same per-person bars on screen, opposite math. Pick whichever number you want to lock in.</p>
+
+    <h3><span class="n">5</span> Why the default looks the way it does</h3>
+    <p>The default schedule is the <b>standard EO Forum meeting agenda</b>:</p>
+    <ul>
+      <li>Opening rituals — 15 min</li>
+      <li>5% Reflections &amp; Parking Lot — 45 min</li>
+      <li>Break — 10 min</li>
+      <li>Planned Deep Dive — 60 min</li>
+      <li>Break — 10 min</li>
+      <li>Impromptu Deep Dive / Brainstorm IQ — 90 min</li>
+      <li>Closing rituals — 15 min</li>
+    </ul>
+    <p>It mirrors the official EO format (~4 hours) so you can start instantly and usually only change the <b>number of participants</b>. <b>5% Reflections</b> is set to <b>Everyone</b> because that's the part where each member gets a timed share; the deep dives and brainstorm are <b>Fixed</b> because they're whole-group. Tap <b>Reset to standard</b> any time to return to it.</p>
+
+    <h3><span class="n">6</span> Tips</h3>
+    <ul>
+      <li><b>Keep the phone awake</b> — opened from this hosted link, the timer keeps your screen on while running. (Opening a downloaded file can't do that.)</li>
+      <li><b>Add to Home Screen</b> — it then launches full-screen like an app, with the EO icon.</li>
+      <li><b>Share the link</b> — send the Copy-link URL to co-chairs so everyone runs the exact same schedule.</li>
+    </ul>
+
+    <button class="btn primary" id="helpDone" style="width:100%;margin-top:24px">Got it</button>
   </div>
 </div>
 
@@ -460,6 +554,7 @@ function showView(v){
   $('ready').classList.toggle('hidden', v!=='ready');
   $('run').classList.toggle('hidden', v!=='run');
   $('end').classList.toggle('hidden', v!=='end');
+  $('help').classList.toggle('hidden', v!=='help');
 }
 
 let cardUpdaters=[];   // per-card fns to refresh hints / linked people without rebuilding inputs
@@ -995,6 +1090,9 @@ $('addBlock').addEventListener('click',()=>{
 });
 $('shareBtn').addEventListener('click',shareLink);
 $('shareTop').addEventListener('click',shareLink);
+$('helpTop').addEventListener('click',()=>{ showView('help'); window.scrollTo(0,0); });
+$('helpBack').addEventListener('click',()=>showView('edit'));
+$('helpDone').addEventListener('click',()=>showView('edit'));
 $('resetBtn').addEventListener('click',resetToStandard);
 $('startBtn').addEventListener('click',startMeeting);
 
@@ -1016,7 +1114,9 @@ if(location.search.indexOf('qa')>=0){
   state.idx=parseInt(params.get('block')||'0');
   const seed=parseInt(params.get('seed')||'0'); // inject drift (sec) across completed blocks
   for(let k=0;k<state.idx;k++){ const pb=state.blocks[k]; state.actuals[pb.id]=totalSec(pb)+(k===0?seed:0); }
-  if(params.get('view')==='ready'){ showView('ready'); renderReady(); }
+  const qview=params.get('view');
+  if(qview==='ready'){ showView('ready'); renderReady(); }
+  else if(qview==='help'){ showView('help'); }
   else {
     startBlock();
     const adv=parseInt(params.get('adv')||'0');
