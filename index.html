@@ -163,24 +163,67 @@
   .bigstart:active{filter:brightness(.92)}
 
   /* Help */
-  #help{max-width:680px;margin:0 auto;padding:0 16px 60px}
-  .helpHead{display:flex;align-items:center;gap:12px;position:sticky;top:0;background:var(--bg);padding:14px 0 12px;z-index:2;border-bottom:1px solid var(--line);margin-bottom:6px}
+  #help{max-width:560px;margin:0 auto;padding:0 16px 90px}
+  .helpHead{display:flex;align-items:center;gap:12px;position:sticky;top:0;background:var(--bg);padding:14px 0 12px;z-index:2;border-bottom:1px solid var(--line)}
   .helpHead .x{width:40px;height:40px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);display:grid;place-items:center;font-size:20px;flex:0 0 auto}
-  .helpHead h2{font-size:19px;margin:0}
-  .help h3{font-size:16px;margin:26px 0 6px;color:var(--txt);display:flex;align-items:center;gap:8px}
-  .help h3 .n{width:24px;height:24px;border-radius:7px;background:var(--accent);color:#fff;font-size:13px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto}
-  .help p{color:var(--muted);font-size:15px;line-height:1.55;margin:8px 0}
-  .help li{color:var(--muted);font-size:15px;line-height:1.5;margin:7px 0}
-  .help b,.help strong{color:var(--txt);font-weight:700}
-  .help ol,.help ul{padding-left:22px;margin:8px 0}
-  .help .card2{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:4px 16px 14px;margin:12px 0}
-  .help table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
-  .help th,.help td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-  .help th{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
-  .help td b{color:var(--txt)}
-  .chip{display:inline-block;padding:3px 9px;border-radius:7px;font-size:12.5px;font-weight:800;color:#fff;white-space:nowrap}
-  .help .lead{color:var(--txt);font-size:15.5px;line-height:1.55}
-  .help .quote{border-left:3px solid var(--line);padding:2px 0 2px 12px;margin:8px 0;color:var(--txt);font-style:italic}
+  .helpHead h2{font-size:18px;margin:0}
+  .hIntro{text-align:center;padding:30px 6px 4px}
+  .hIntro img{width:60px;height:60px;margin-bottom:14px}
+  .hIntro h1{font-size:24px;margin:0 0 10px;font-weight:800;letter-spacing:.2px}
+  .hIntro p{color:var(--muted);font-size:15px;line-height:1.55;margin:0 auto;max-width:36ch}
+  .hSec{margin-top:44px}
+  .hSec>.lbl3{font-size:12px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);font-weight:800;margin:0 4px 16px;display:block}
+  /* steps */
+  .step{display:flex;gap:15px;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:14px}
+  .step .b{width:30px;height:30px;border-radius:10px;background:var(--accent);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;flex:0 0 auto;font-size:14px}
+  .step .c{flex:1;min-width:0}
+  .step h4{margin:3px 0 6px;font-size:16.5px;font-weight:700}
+  .step p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+  .step .demo{margin-top:15px}
+  .cap{color:var(--muted);font-size:12.5px;margin-top:9px;line-height:1.45}
+  /* button replicas */
+  .rbtnDemo{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:13px;font-weight:800;font-size:14.5px}
+  .rbtnDemo.blue{background:var(--accent);color:#fff}
+  .rbtnDemo.white{background:#fff;color:#15163a}
+  .rbtnDemo.wide{display:flex;width:100%}
+  .demoRow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  /* mini vertical bars */
+  .miniBars{display:flex;gap:5px;height:96px;margin-bottom:12px}
+  .miniBars .bar{flex:1;border-radius:8px;background:rgba(255,255,255,.07);position:relative;overflow:hidden}
+  .miniBars .bar>i{position:absolute;left:0;right:0;bottom:0;border-radius:8px}
+  .miniBars .bar>em{position:absolute;left:0;right:0;bottom:6px;text-align:center;font-size:11px;font-weight:800;font-style:normal;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.55);z-index:1}
+  .miniBars .bar.on{box-shadow:inset 0 0 0 2px rgba(255,255,255,.75)}
+  .miniBig{font-size:34px;font-weight:800;font-variant-numeric:tabular-nums;text-align:center;color:#fff;position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-shadow:0 2px 10px rgba(0,0,0,.5)}
+  /* type cards */
+  .typeCard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin-bottom:14px}
+  .typeCard .h{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .typeDiag{display:flex;gap:5px;height:30px;margin-bottom:13px}
+  .typeDiag .seg{border-radius:6px}
+  .typeCard p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+  .typeCard p .k{color:var(--txt);font-weight:700}
+  .chip{display:inline-flex;align-items:center;padding:4px 11px;border-radius:8px;font-size:13px;font-weight:800;color:#fff}
+  .mirror{text-align:center;color:var(--muted);font-size:13px;line-height:1.5;margin:6px 6px 0;font-style:italic}
+  /* feature tiles */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+  .tile{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:15px;display:flex;flex-direction:column;gap:9px}
+  .tile .ic{width:36px;height:36px;border-radius:11px;background:var(--panel2);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--txt)}
+  .tile b{font-size:14px}
+  .tile span{color:var(--muted);font-size:12.5px;line-height:1.45}
+  /* agenda timeline */
+  .tl{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:6px 16px}
+  .tlRow{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line)}
+  .tlRow:last-child{border-bottom:none}
+  .tlRow .dot{width:13px;height:13px;border-radius:50%;flex:0 0 auto}
+  .tlRow .nm{flex:1;font-size:14.5px;font-weight:600}
+  .tlRow .du{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;font-weight:600}
+  .tlRow.brk .nm{color:var(--muted);font-weight:500}
+  /* tips */
+  .tipRow{display:flex;gap:13px;align-items:flex-start;padding:13px 2px;border-bottom:1px solid var(--line)}
+  .tipRow:last-child{border-bottom:none}
+  .tipRow .e{font-size:20px;flex:0 0 auto;line-height:1.3}
+  .tipRow p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+  .tipRow b{color:var(--txt)}
+  .note{color:var(--muted);font-size:13px;line-height:1.5;margin:12px 4px 0;text-align:center}
 
   /* End summary */
   #end{max-width:640px;margin:0 auto;padding:20px 16px 40px}
@@ -312,69 +355,129 @@
     <h2>How to use Forum Timer</h2>
   </div>
   <div class="help">
-    <p class="lead">A full-screen timer for running an EO Forum meeting. You build a schedule, then run it activity by activity with big, room-visible countdowns. There are no accounts and no names — the whole schedule lives in the link.</p>
-
-    <h3><span class="n">1</span> Running a meeting</h3>
-    <p>You (the timekeeper) stay in control — nothing advances on its own.</p>
-    <ol>
-      <li>From the home screen, tap <b>Start meeting</b>.</li>
-      <li>You'll see a <b>“Get ready”</b> screen with the next activity and a big <b>Start</b> button. The timer doesn't run until you tap it — so you can wait until the group is actually ready.</li>
-      <li>When running, the screen fills with a colored bar that shrinks as time passes, plus a large countdown.</li>
-      <li>At zero, you hear a chime and it starts counting <b>up</b> (e.g. <b>+1:30</b>) so you can see how far over you are. It does <b>not</b> flash or jump ahead.</li>
-      <li>Tap <b>Done</b> / <b>Next</b> to finish the activity. You land back on a “Get ready” screen for the next one — tap <b>Start</b> when ready.</li>
-    </ol>
-    <p>While you run, the screen shows whether you're <b style="color:var(--good)">ahead of schedule</b> or <b style="color:var(--danger)">behind schedule</b>, and a projected end time, so you can speed up or relax.</p>
-
-    <h3><span class="n">2</span> Per-person activities</h3>
-    <p>For activities that are split per person, the screen shows <b>one vertical bar per person</b>, numbered. The current person's bar drains; finished people empty out; upcoming people stay dimmed.</p>
-    <p>After each person's time, it <b>pauses and waits</b> on a “Start Person&nbsp;N” screen. You tap to begin the next person. This gives you a beat to hand off cleanly instead of racing through everyone automatically.</p>
-
-    <h3><span class="n">3</span> Setting up your schedule</h3>
-    <div class="card2">
-      <ul>
-        <li><b>Default participants</b> — how many people are in the room. Activities set to “Everyone” divide by this number.</li>
-        <li><b>Add or insert</b> — tap <b>＋ Add activity</b> at the bottom, or the small <b>＋</b> between any two activities to insert one exactly there.</li>
-        <li><b>Reorder</b> — drag the <b>⠿</b> handle on the left of a card (works on phone and computer). A dashed outline shows where it'll land before you let go.</li>
-        <li><b>Color &amp; notes</b> — tap the color swatch to recolor an activity. Add a note/suggestion; it appears on the “Get ready” screen during the meeting.</li>
-        <li><b>Save &amp; share</b> — tap <b>Copy link</b>. The entire schedule is encoded in the URL, so paste it anywhere to reload or send it to a co-chair. It also remembers your last setup automatically on this device.</li>
-        <li><b>Reset to standard</b> — restores the standard EO Forum agenda (asks you to confirm first).</li>
-      </ul>
+    <div class="hIntro">
+      <img src="eo-icon.png" alt="EO" />
+      <h1>Run your Forum, on time</h1>
+      <p>Build a schedule, then run it with big, room-visible timers. No accounts — your whole schedule lives in the link.</p>
     </div>
 
-    <h3><span class="n">4</span> The three timer types</h3>
-    <p>The difference is about <b>what stays constant</b> when your headcount changes.</p>
-    <p><span class="chip" style="background:#5E617D">Fixed</span> &nbsp;One timer for the whole block. You enter a total time; headcount doesn't matter. Use it for opening rituals, breaks, a deep dive (one person presenting to the group), and closing.</p>
-    <p><span class="chip" style="background:#3D46F2">Everyone</span> &nbsp;You enter the <b>total</b> time and it's split across all participants, running one mini-timer per person. <b>The total stays fixed; each person's share grows or shrinks with headcount.</b> Use it when the clock is the constraint — “check-ins get 45 minutes, divide it fairly.”</p>
-    <p><span class="chip" style="background:#1EA691">Per person</span> &nbsp;You enter the time <b>each person</b> gets, and the total grows with headcount. <b>Each person's time stays fixed; the block gets longer or shorter.</b> Use it when fairness-per-head is the constraint — “everyone gets exactly 3 minutes, however long that takes.”</p>
-    <table>
-      <tr><th>Type</th><th>You enter</th><th>When people change…</th></tr>
-      <tr><td><b>Fixed</b></td><td>Total time</td><td>Nothing changes</td></tr>
-      <tr><td><b>Everyone</b></td><td><b>Total</b> time</td><td>Each person's share changes; total stays</td></tr>
-      <tr><td><b>Per&nbsp;person</b></td><td>Time <b>each</b></td><td>Total changes; each person's time stays</td></tr>
-    </table>
-    <p class="quote">Everyone and Per person are mirror images — same per-person bars on screen, opposite math. Pick whichever number you want to lock in.</p>
+    <div class="hSec">
+      <span class="lbl3">Running a meeting</span>
 
-    <h3><span class="n">5</span> Why the default looks the way it does</h3>
-    <p>The default schedule is the <b>standard EO Forum meeting agenda</b>:</p>
-    <ul>
-      <li>Opening rituals — 15 min</li>
-      <li>5% Reflections &amp; Parking Lot — 45 min</li>
-      <li>Break — 10 min</li>
-      <li>Planned Deep Dive — 60 min</li>
-      <li>Break — 10 min</li>
-      <li>Impromptu Deep Dive / Brainstorm IQ — 90 min</li>
-      <li>Closing rituals — 15 min</li>
-    </ul>
-    <p>It mirrors the official EO format (~4 hours) so you can start instantly and usually only change the <b>number of participants</b>. <b>5% Reflections</b> is set to <b>Everyone</b> because that's the part where each member gets a timed share; the deep dives and brainstorm are <b>Fixed</b> because they're whole-group. Tap <b>Reset to standard</b> any time to return to it.</p>
+      <div class="step">
+        <div class="b">1</div>
+        <div class="c">
+          <h4>Tap Start meeting</h4>
+          <p>Kicks things off from the home screen.</p>
+          <div class="demo"><span class="rbtnDemo blue">Start meeting ▶</span></div>
+        </div>
+      </div>
 
-    <h3><span class="n">6</span> Tips</h3>
-    <ul>
-      <li><b>Keep the phone awake</b> — opened from this hosted link, the timer keeps your screen on while running. (Opening a downloaded file can't do that.)</li>
-      <li><b>Add to Home Screen</b> — it then launches full-screen like an app, with the EO icon.</li>
-      <li><b>Share the link</b> — send the Copy-link URL to co-chairs so everyone runs the exact same schedule.</li>
-    </ul>
+      <div class="step">
+        <div class="b">2</div>
+        <div class="c">
+          <h4>Start each activity yourself</h4>
+          <p>Nothing runs until you tap — so you can wait until the room is ready.</p>
+          <div class="demo"><span class="rbtnDemo blue wide">Start: Opening rituals ▶</span></div>
+        </div>
+      </div>
 
-    <button class="btn primary" id="helpDone" style="width:100%;margin-top:24px">Got it</button>
+      <div class="step">
+        <div class="b">3</div>
+        <div class="c">
+          <h4>Watch the bar, then tap Done</h4>
+          <p>A color bar shrinks as time runs out.</p>
+          <div class="demo">
+            <div class="miniBars">
+              <div class="bar"><i style="height:58%;background:#FA653C"></i><div class="miniBig">8:42</div></div>
+            </div>
+            <div class="demoRow"><span class="rbtnDemo white">Pause</span><span class="rbtnDemo white">Done ✓</span></div>
+            <p class="cap">At zero it chimes and counts <b>up</b> (e.g. <b>+1:30</b>) — no flashing, and it never jumps ahead.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="note">As you go, it shows if you're <b style="color:var(--good)">ahead</b> or <b style="color:var(--danger)">behind schedule</b>, plus your projected end time.</p>
+    </div>
+
+    <div class="hSec">
+      <span class="lbl3">Per-person activities</span>
+      <div class="step">
+        <div class="c">
+          <h4>One bar per person</h4>
+          <p>The current person's bar drains, finished people empty out, and it <b>pauses between each one</b> — you tap to start the next.</p>
+          <div class="demo">
+            <div class="miniBars">
+              <div class="bar"><em>1</em></div>
+              <div class="bar on"><i style="height:70%;background:#FF346E"></i><em>2</em></div>
+              <div class="bar"><i style="height:100%;background:#7a1f3d"></i><em>3</em></div>
+              <div class="bar"><i style="height:100%;background:#7a1f3d"></i><em>4</em></div>
+              <div class="bar"><i style="height:100%;background:#7a1f3d"></i><em>5</em></div>
+            </div>
+            <span class="rbtnDemo white wide">Start Person 3 ▶</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hSec">
+      <span class="lbl3">Building your schedule</span>
+      <div class="tiles">
+        <div class="tile"><div class="ic">⠿</div><b>Drag to reorder</b><span>Grab the handle — works on phone too.</span></div>
+        <div class="tile"><div class="ic">＋</div><b>Insert anywhere</b><span>Tap ＋ between two activities.</span></div>
+        <div class="tile"><div class="ic" style="background:#FA653C"></div><b>Recolor</b><span>Tap an activity's color dot.</span></div>
+        <div class="tile"><div class="ic">✎</div><b>Add a note</b><span>Shows on the “get ready” screen.</span></div>
+        <div class="tile"><div class="ic">🔗</div><b>Copy link</b><span>Saves &amp; shares the whole schedule.</span></div>
+        <div class="tile"><div class="ic">↺</div><b>Reset</b><span>Back to the standard agenda.</span></div>
+      </div>
+    </div>
+
+    <div class="hSec">
+      <span class="lbl3">The three timer types</span>
+
+      <div class="typeCard">
+        <div class="h"><span class="chip" style="background:#5E617D">Fixed</span></div>
+        <div class="typeDiag"><div class="seg" style="flex:1;background:#5E617D"></div></div>
+        <p>One timer for the whole block. <span class="k">Headcount doesn't matter.</span> Use it for rituals, breaks, and deep dives.</p>
+      </div>
+
+      <div class="typeCard">
+        <div class="h"><span class="chip" style="background:#3D46F2">Everyone</span></div>
+        <div class="typeDiag"><div class="seg" style="flex:1;background:#3D46F2"></div><div class="seg" style="flex:1;background:#3D46F2"></div><div class="seg" style="flex:1;background:#3D46F2"></div><div class="seg" style="flex:1;background:#3D46F2"></div></div>
+        <p>You set the <span class="k">total</span>; it splits between everyone. More people → less time each, but the block stays the same length.</p>
+      </div>
+
+      <div class="typeCard">
+        <div class="h"><span class="chip" style="background:#1EA691">Per person</span></div>
+        <div class="typeDiag"><div class="seg" style="width:22%;background:#1EA691"></div><div class="seg" style="width:22%;background:#1EA691"></div><div class="seg" style="width:22%;background:#1EA691"></div><div class="seg" style="width:14%;background:#1EA691;opacity:.4"></div></div>
+        <p>You set the time <span class="k">each person</span> gets. More people → the block gets longer, but everyone keeps their full slot.</p>
+      </div>
+
+      <p class="mirror">Everyone &amp; Per person look identical on screen — they're just opposite math. Pick the number you want to lock in.</p>
+    </div>
+
+    <div class="hSec">
+      <span class="lbl3">The default agenda · ~4 hours</span>
+      <div class="tl">
+        <div class="tlRow"><div class="dot" style="background:#3D46F2"></div><div class="nm">Opening rituals</div><div class="du">15 min</div></div>
+        <div class="tlRow"><div class="dot" style="background:#FF346E"></div><div class="nm">5% Reflections &amp; Parking Lot</div><div class="du">45 min</div></div>
+        <div class="tlRow brk"><div class="dot" style="background:#5E617D"></div><div class="nm">Break</div><div class="du">10 min</div></div>
+        <div class="tlRow"><div class="dot" style="background:#FA653C"></div><div class="nm">Planned Deep Dive</div><div class="du">60 min</div></div>
+        <div class="tlRow brk"><div class="dot" style="background:#5E617D"></div><div class="nm">Break</div><div class="du">10 min</div></div>
+        <div class="tlRow"><div class="dot" style="background:#1EA691"></div><div class="nm">Impromptu Deep Dive / Brainstorm</div><div class="du">90 min</div></div>
+        <div class="tlRow"><div class="dot" style="background:#3D46F2"></div><div class="nm">Closing rituals</div><div class="du">15 min</div></div>
+      </div>
+      <p class="note">It mirrors the official EO format, so usually you just set the <b>headcount</b>. <b>5% Reflections</b> is “Everyone” (each member gets a timed share); deep dives are “Fixed” (whole-group). Tap <b>Reset to standard</b> anytime.</p>
+    </div>
+
+    <div class="hSec">
+      <span class="lbl3">Tips</span>
+      <div class="tipRow"><div class="e">📱</div><p><b>Keeps your phone awake</b> while a timer runs (from this hosted link).</p></div>
+      <div class="tipRow"><div class="e">➕</div><p><b>Add to Home Screen</b> to launch it full-screen like an app.</p></div>
+      <div class="tipRow"><div class="e">🔗</div><p><b>Share the link</b> so co-chairs run the exact same schedule.</p></div>
+    </div>
+
+    <button class="btn primary" id="helpDone" style="width:100%;margin-top:30px">Got it</button>
   </div>
 </div>
 
