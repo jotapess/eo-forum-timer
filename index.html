@@ -16,6 +16,7 @@
     --bg:#0C0C31; --panel:#161642; --panel2:#1f1f54; --line:#2e2e6b;
     --txt:#FFFFFF; --muted:#9a9cc8; --accent:#3D46F2; --danger:#FF346E; --good:#1EA691;
   }
+  .ico{width:1em;height:1em;fill:currentColor;display:inline-block;vertical-align:-0.125em;flex:0 0 auto}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;height:100%}
   body{
@@ -43,7 +44,7 @@
   .row>*{flex:1}
 
   .schedHead{display:flex;align-items:center;justify-content:space-between;margin:6px 2px 4px}
-  .resetbtn{font-size:12.5px;font-weight:700;color:var(--accent);padding:6px 10px;border-radius:9px;background:var(--panel);border:1px solid var(--line)}
+  .resetbtn{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;font-size:12.5px;font-weight:700;color:var(--accent);padding:7px 11px;border-radius:9px;background:var(--panel);border:1px solid var(--line)}
   .resetbtn:active{background:var(--panel2)}
   .notein{width:100%;background:transparent;border:none;border-top:1px solid var(--line);margin-top:4px;padding:9px 4px 2px;color:var(--muted);font-size:13px;outline:none}
   .notein:focus{color:var(--txt)}
@@ -112,7 +113,7 @@
   .segwrap{position:absolute;inset:0;display:flex;flex-direction:row;gap:6px;padding:6px}
   .segslot{flex:1;min-width:0;position:relative;overflow:hidden;border-radius:14px;background:rgba(0,0,0,.34)}
   .segbar{position:absolute;left:0;right:0;bottom:0;height:100%}
-  .segslot.active{box-shadow:inset 0 0 0 3px rgba(255,255,255,.7)}
+  .segslot.active{box-shadow:inset 0 0 0 2px rgba(255,255,255,.3)}
   .seglabel{position:absolute;left:0;right:0;bottom:10px;text-align:center;font-size:13px;font-weight:800;color:rgba(255,255,255,.92);text-shadow:0 1px 6px rgba(0,0,0,.6);z-index:1}
   .runtop{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:10px;padding:14px;padding-top:calc(14px + env(safe-area-inset-top));z-index:3;pointer-events:none}
   .runtop .x{pointer-events:auto;width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.40);display:grid;place-items:center;font-size:17px;flex:0 0 auto}
@@ -131,6 +132,7 @@
   .runfooter{display:flex;gap:12px;padding:12px;padding-bottom:calc(12px + env(safe-area-inset-bottom));background:#0C0C31;border-top:1px solid rgba(255,255,255,.08);z-index:4}
   .rbtn{flex:1;padding:18px;border-radius:16px;font-weight:800;font-size:17px;background:var(--panel2);color:#fff;border:1px solid var(--line)}
   .rbtn.primary{background:#fff;color:#111;border-color:#fff}
+  .rbtn.narrow{flex:0 0 auto;padding-left:16px;padding-right:16px}
   .rbtn:active{filter:brightness(.9)}
   .onDark{color:#fff}
 
@@ -139,25 +141,37 @@
   .readyHead{display:flex;align-items:center;gap:12px;margin-bottom:6px}
   .readyHead .x{width:38px;height:38px;border-radius:50%;background:var(--panel2);display:grid;place-items:center}
   .readyHead .lbl2{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700}
-  .nextCard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:22px 18px;margin:14px 0;text-align:center;position:relative;overflow:hidden}
+  .nextCard{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:18px 18px;margin:14px 0;text-align:center;position:relative;overflow:hidden;flex:0 0 auto}
   .nextCard .nstripe{position:absolute;left:0;top:0;bottom:0;width:8px}
-  .nextCard .nm{font-size:28px;font-weight:800;margin:4px 0}
-  .nextCard .dur{font-size:46px;font-weight:800;font-variant-numeric:tabular-nums;margin:6px 0 2px}
+  .nextCard .nm{font-size:25px;font-weight:800;margin:4px 0;line-height:1.15}
+  .nextCard .dur{font-size:42px;font-weight:800;font-variant-numeric:tabular-nums;margin:4px 0 2px}
   .nextCard .meta{color:var(--muted);font-size:14px}
-  .nextCard .note{color:var(--txt);opacity:.85;font-size:14px;margin-top:10px;line-height:1.45;font-style:italic}
-  .statusRow{display:flex;gap:10px;margin-bottom:10px}
+  .nextCard .note{color:var(--txt);opacity:.8;font-size:13.5px;margin-top:9px;line-height:1.4;font-style:italic;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .statusRow{display:flex;gap:10px;margin-bottom:10px;flex:0 0 auto}
   .stat{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:11px;text-align:center}
   .stat .v{font-size:18px;font-weight:800}
   .stat .k{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-  .upcoming{flex:1}
+  .upcoming{flex:0 0 auto}
+  .upHead{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 2px 10px}
+  .upHead .upTitle{margin:0}
   .upTitle{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin:14px 2px 8px;font-weight:700}
-  .uprow{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:9px 10px;margin-bottom:8px}
+  .uprow{display:flex;align-items:center;gap:11px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;margin-bottom:8px;user-select:none}
+  .uprow.tappable{cursor:pointer}
+  .uprow.tappable:hover{border-color:var(--accent)}
   .uprow.done{opacity:.5}
-  .uprow.cur{border-color:var(--accent)}
+  .uprow.cur{border-color:var(--accent);background:rgba(61,70,242,.10)}
   .uprow .dot{width:14px;height:14px;border-radius:50%;flex:0 0 auto}
-  .uprow .un{flex:1;font-weight:600;font-size:15px}
-  .uprow .ut{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
-  .uprow .mv{width:30px;height:30px;border-radius:8px;background:var(--panel2);display:grid;place-items:center;color:var(--muted)}
+  .uprow .un{flex:1;font-weight:600;font-size:15px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .uprow .ut{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;flex:0 0 auto}
+  .uprow .selck{color:var(--accent);font-size:14px;font-weight:800;opacity:0;transition:.12s;flex:0 0 auto;width:16px;text-align:center}
+  .uprow.tappable:hover .selck{opacity:.35}
+  .uprow.cur .selck{opacity:1}
+  .uprow .grip{color:var(--muted);font-size:16px;cursor:grab;touch-action:none;padding:4px 2px;flex:0 0 auto;display:flex}
+  .uprow .grip:active{cursor:grabbing;color:var(--txt)}
+  .uprow .grip.disabled{opacity:.25;cursor:default;pointer-events:none}
+  .uprow.drag-src{display:none}
+  .uprow.phRow{background:rgba(61,70,242,.12);border:2px dashed var(--accent)}
+  #upList.dragging .uprow{cursor:grabbing}
   .startWrap{position:sticky;bottom:0;padding-top:12px;background:linear-gradient(transparent,var(--bg) 30%)}
   .bigstart{width:100%;padding:20px;border-radius:18px;background:var(--accent);color:#fff;font-weight:800;font-size:19px}
   .bigstart:active{filter:brightness(.92)}
@@ -225,9 +239,54 @@
   .tipRow b{color:var(--txt)}
   .note{color:var(--muted);font-size:13px;line-height:1.5;margin:12px 4px 0;text-align:center}
 
+  /* Home */
+  #home{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 18px calc(24px + env(safe-area-inset-bottom));max-width:520px;margin:0 auto}
+  .homeLogo{width:74px;height:74px;margin-bottom:16px}
+  .homeTitle{font-size:27px;font-weight:800;margin:0 0 6px;text-align:center;letter-spacing:.2px}
+  .homeSub{color:var(--muted);font-size:15px;margin:0 0 30px;text-align:center}
+  .homeCard{display:flex;align-items:center;gap:15px;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:13px;text-align:left}
+  .homeCard:active{background:var(--panel2)}
+  .homeCard .hcIc{width:48px;height:48px;border-radius:14px;background:var(--panel2);display:flex;align-items:center;justify-content:center;font-size:24px;flex:0 0 auto}
+  .homeCard .hcText{flex:1;min-width:0}
+  .homeCard .hcText b{display:block;font-size:17px;margin-bottom:3px}
+  .homeCard .hcText span{color:var(--muted);font-size:13.5px;line-height:1.4}
+  .homeCard .hcArrow{color:var(--muted);font-size:20px;flex:0 0 auto}
+  .homeHelp{margin-top:14px;color:var(--muted);font-weight:600;font-size:14px;padding:10px;text-decoration:underline;text-underline-offset:3px}
+
+  /* Single-timer setup */
+  #single{max-width:560px;margin:0 auto;padding:16px 16px 40px}
+  #single .head h1{font-size:20px}
+  #single .bigstart{margin-top:8px}
+
+  /* Single-timer end */
+  #singleEnd{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px 18px;max-width:480px;margin:0 auto}
+  .seCard{width:100%;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:30px 22px;text-align:center;position:relative;overflow:hidden;margin-bottom:16px}
+  .seStripeBar{position:absolute;left:0;top:0;right:0;height:7px}
+  .seCheck{width:56px;height:56px;border-radius:50%;background:var(--good);color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;margin:6px auto 14px}
+  .seTitle{font-size:14px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);font-weight:800}
+  .seName2{font-size:23px;font-weight:800;margin:4px 0 14px}
+  .seBig{font-size:56px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+  .seSub{color:var(--muted);font-size:14px;margin-top:6px}
+  .seDelta{font-size:15px;font-weight:700;margin-top:10px}
+  #singleEnd .acts{display:flex;gap:10px;width:100%}
+
+  /* Nav sheet */
+  #navSheet{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;justify-content:flex-end}
+  .navBackdrop{position:absolute;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(2px)}
+  .navCard{position:relative;background:var(--panel);border-top-left-radius:22px;border-top-right-radius:22px;border-top:1px solid var(--line);padding:10px 14px calc(20px + env(safe-area-inset-bottom));max-width:560px;margin:0 auto;width:100%;animation:navUp .22s ease}
+  @keyframes navUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .navGrab{width:40px;height:4px;border-radius:3px;background:var(--line);margin:6px auto 12px}
+  .navItem{display:flex;align-items:center;gap:14px;width:100%;padding:15px 12px;border-radius:13px;font-size:16px;font-weight:600;text-align:left}
+  .navItem:active{background:var(--panel2)}
+  .navItem span{font-size:20px;width:26px;text-align:center;flex:0 0 auto}
+  .navItem.cur{color:var(--accent)}
+  .navItem.cur::after{content:'•';margin-left:auto;color:var(--accent)}
+
   /* End summary */
   #end{max-width:640px;margin:0 auto;padding:20px 16px 40px}
   #end h2{font-size:24px}
+  #end .endHead{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  #end .endHead h2{margin:0;flex:1}
   .erow{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--line)}
   .erow .dot{width:12px;height:12px;border-radius:50%}
   .erow .en{flex:1;font-weight:600}
@@ -241,13 +300,31 @@
 </head>
 <body>
 
+<!-- ============ HOME ============ -->
+<div id="home" class="hidden">
+  <img class="homeLogo" src="eo-icon.png" alt="EO" />
+  <h1 class="homeTitle">EO Forum Timer</h1>
+  <p class="homeSub">Keep your meeting on track.</p>
+  <button class="homeCard" id="goFull">
+    <div class="hcIc" data-ico="clipboard"></div>
+    <div class="hcText"><b>Run a full session</b><span>Your whole forum agenda, block by block.</span></div>
+    <div class="hcArrow">→</div>
+  </button>
+  <button class="homeCard" id="goSingle">
+    <div class="hcIc" data-ico="stopwatch"></div>
+    <div class="hcText"><b>Run a single timer</b><span>A quick one-off timer. Set it and go.</span></div>
+    <div class="hcArrow">→</div>
+  </button>
+  <button class="homeHelp" id="goHelpHome">How to use the timer</button>
+</div>
+
 <!-- ============ EDITOR ============ -->
 <div id="editor">
   <div class="head">
+    <button class="iconbtn" id="menuEdit" title="Menu" data-ico="bars"></button>
     <img class="logo" src="eo-icon.png" alt="EO" />
-    <h1>Forum Timer</h1>
-    <button class="iconbtn" id="helpTop" title="How to use">?</button>
-    <button class="iconbtn" id="shareTop" title="Copy share link">🔗</button>
+    <h1>Full session</h1>
+    <button class="iconbtn" id="shareTop" title="Copy share link" data-ico="link"></button>
   </div>
 
   <div class="field">
@@ -284,10 +361,41 @@
   </div>
 </div>
 
+<!-- ============ SINGLE TIMER SETUP ============ -->
+<div id="single" class="hidden">
+  <div class="head">
+    <button class="iconbtn" id="menuSingle" title="Menu" data-ico="bars"></button>
+    <img class="logo" src="eo-icon.png" alt="EO" />
+    <h1>Single timer</h1>
+  </div>
+  <div class="field">
+    <label class="lbl">Label (optional)</label>
+    <input class="input" id="sgName" placeholder="Timer" />
+  </div>
+  <div class="field">
+    <label class="lbl">Type</label>
+    <div class="seg" id="sgType">
+      <button data-t="fixed">Fixed</button>
+      <button data-t="shared">Everyone</button>
+      <button data-t="perPerson">Per person</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="field" style="flex:1"><label class="lbl" id="sgMinLbl">Total minutes</label><input class="input" id="sgMin" type="number" min="0" step="0.5" inputmode="decimal" /></div>
+    <div class="field" id="sgPeopleCol" style="flex:1"><label class="lbl">People</label><input class="input" id="sgPeople" type="number" min="1" inputmode="numeric" /></div>
+  </div>
+  <div class="field">
+    <label class="lbl">Color</label>
+    <div class="palette" id="sgPalette" style="gap:10px"></div>
+  </div>
+  <div class="hint" id="sgHint" style="margin:2px 2px 18px"></div>
+  <button class="bigstart" id="sgStart">Start timer ▶</button>
+</div>
+
 <!-- ============ READY / TRANSITION ============ -->
 <div id="ready" class="hidden">
   <div class="readyHead">
-    <button class="x" id="readyClose">✕</button>
+    <button class="x" id="menuReady" title="Menu" data-ico="bars"></button>
     <div>
       <div class="lbl2" id="readyKicker">Get ready</div>
     </div>
@@ -297,7 +405,7 @@
 
   <div class="nextCard" id="nextCard">
     <div class="nstripe" id="nstripe"></div>
-    <div class="lbl2">Up next</div>
+    <div class="lbl2" id="readyUpLbl">Up next</div>
     <div class="nm" id="nextName">—</div>
     <div class="dur" id="nextDur">0:00</div>
     <div class="meta" id="nextMeta"></div>
@@ -305,7 +413,10 @@
   </div>
 
   <div class="upcoming">
-    <div class="upTitle">Schedule — tap arrows to reorder remaining</div>
+    <div class="upHead">
+      <div class="upTitle">Schedule — tap to select · drag to reorder</div>
+      <button class="resetbtn" id="readyEdit" data-ico="pen" data-txt="Edit schedule"></button>
+    </div>
     <div id="upList"></div>
   </div>
 
@@ -332,6 +443,7 @@
     </div>
   </div>
   <div class="runfooter onDark">
+    <button class="rbtn narrow" id="prevBtn">‹ Prev</button>
     <button class="rbtn" id="pauseBtn">Pause</button>
     <button class="rbtn primary" id="doneBtn">Done ✓</button>
   </div>
@@ -339,13 +451,34 @@
 
 <!-- ============ END SUMMARY ============ -->
 <div id="end" class="hidden">
-  <h2>Meeting recap</h2>
+  <div class="endHead">
+    <button class="iconbtn" id="menuEnd" title="Menu" data-ico="bars"></button>
+    <h2>Meeting recap</h2>
+  </div>
   <div id="endTotals" class="sub" style="color:var(--muted);margin-bottom:12px"></div>
   <div id="endList"></div>
   <div class="acts" style="margin-top:24px">
     <button class="btn ghost" id="endEdit">Edit schedule</button>
     <button class="btn primary" id="endRestart">Run again</button>
   </div>
+</div>
+
+<!-- ============ SINGLE TIMER DONE ============ -->
+<div id="singleEnd" class="hidden">
+  <div class="seCard">
+    <div class="seStripeBar" id="seStripe"></div>
+    <div class="seCheck">✓</div>
+    <div class="seTitle">Timer complete</div>
+    <div class="seName2" id="seName">Timer</div>
+    <div class="seBig"><span id="seUsed">0:00</span></div>
+    <div class="seSub" id="sePlan"></div>
+    <div class="seDelta" id="seDelta"></div>
+  </div>
+  <div class="acts">
+    <button class="btn ghost" id="seNew">New timer</button>
+    <button class="btn primary" id="seAgain">Run again</button>
+  </div>
+  <button class="homeHelp" id="seHome">← Home</button>
 </div>
 
 <!-- ============ HELP ============ -->
@@ -423,12 +556,12 @@
     <div class="hSec">
       <span class="lbl3">Building your schedule</span>
       <div class="tiles">
-        <div class="tile"><div class="ic">⠿</div><b>Drag to reorder</b><span>Grab the handle — works on phone too.</span></div>
-        <div class="tile"><div class="ic">＋</div><b>Insert anywhere</b><span>Tap ＋ between two activities.</span></div>
+        <div class="tile"><div class="ic" data-ico="grip"></div><b>Drag to reorder</b><span>Grab the handle — works on phone too.</span></div>
+        <div class="tile"><div class="ic" data-ico="plus"></div><b>Insert anywhere</b><span>Tap ＋ between two activities.</span></div>
         <div class="tile"><div class="ic" style="background:#FA653C"></div><b>Recolor</b><span>Tap an activity's color dot.</span></div>
-        <div class="tile"><div class="ic">✎</div><b>Add a note</b><span>Shows on the “get ready” screen.</span></div>
-        <div class="tile"><div class="ic">🔗</div><b>Copy link</b><span>Saves &amp; shares the whole schedule.</span></div>
-        <div class="tile"><div class="ic">↺</div><b>Reset</b><span>Back to the standard agenda.</span></div>
+        <div class="tile"><div class="ic" data-ico="pen"></div><b>Add a note</b><span>Shows on the “get ready” screen.</span></div>
+        <div class="tile"><div class="ic" data-ico="link"></div><b>Copy link</b><span>Saves &amp; shares the whole schedule.</span></div>
+        <div class="tile"><div class="ic" data-ico="rotate"></div><b>Reset</b><span>Back to the standard agenda.</span></div>
       </div>
     </div>
 
@@ -472,12 +605,24 @@
 
     <div class="hSec">
       <span class="lbl3">Tips</span>
-      <div class="tipRow"><div class="e">📱</div><p><b>Keeps your phone awake</b> while a timer runs (from this hosted link).</p></div>
-      <div class="tipRow"><div class="e">➕</div><p><b>Add to Home Screen</b> to launch it full-screen like an app.</p></div>
-      <div class="tipRow"><div class="e">🔗</div><p><b>Share the link</b> so co-chairs run the exact same schedule.</p></div>
+      <div class="tipRow"><div class="e" data-ico="mobile"></div><p><b>Keeps your phone awake</b> while a timer runs (from this hosted link).</p></div>
+      <div class="tipRow"><div class="e" data-ico="plus"></div><p><b>Add to Home Screen</b> to launch it full-screen like an app.</p></div>
+      <div class="tipRow"><div class="e" data-ico="link"></div><p><b>Share the link</b> so co-chairs run the exact same schedule.</p></div>
     </div>
 
     <button class="btn primary" id="helpDone" style="width:100%;margin-top:30px">Got it</button>
+  </div>
+</div>
+
+<!-- ============ NAV SHEET ============ -->
+<div id="navSheet" class="hidden">
+  <div class="navBackdrop" id="navBackdrop"></div>
+  <div class="navCard">
+    <div class="navGrab"></div>
+    <button class="navItem" data-nav="home"><span data-ico="house"></span> Home</button>
+    <button class="navItem" data-nav="edit"><span data-ico="clipboard"></span> Full session</button>
+    <button class="navItem" data-nav="single"><span data-ico="stopwatch"></span> Single timer</button>
+    <button class="navItem" data-nav="help"><span data-ico="question"></span> How to use</button>
   </div>
 </div>
 
@@ -491,17 +636,34 @@
 const COLORS = ['#3D46F2','#FF346E','#FA653C','#EFB82E','#1EA691','#5E617D'];
 const TYPES = { FIXED:'fixed', SHARED:'shared', PERPERSON:'perPerson' };
 
+/* ---------- flat monochrome icons (inherit currentColor) ---------- */
+const ICONS={
+  house:['0 0 576 512','M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z'],
+  clipboard:['0 0 384 512','M192 0c-41.8 0-77.4 26.7-90.5 64L64 64C28.7 64 0 92.7 0 128L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64l-37.5 0C269.4 26.7 233.8 0 192 0zm0 64a32 32 0 1 1 0 64 32 32 0 1 1 0-64zM72 256a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm104-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16s7.2-16 16-16zM72 352a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zm88 0c0-8.8 7.2-16 16-16l128 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-128 0c-8.8 0-16-7.2-16-16z'],
+  stopwatch:['0 0 448 512','M176 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l16 0 0 34.4C92.3 113.8 16 200 16 304c0 114.9 93.1 208 208 208s208-93.1 208-208c0-41.8-12.3-80.7-33.5-113.2l24.1-24.1c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L363.8 143c-28.6-23.3-64-38.6-102.8-43.3L261 64l16 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L224 0 176 0zm72 192l0 128c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-128c0-13.3 10.7-24 24-24s24 10.7 24 24z'],
+  question:['0 0 512 512','M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z'],
+  link:['0 0 640 512','M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C81.5 372.5 81.5 321.5 113 290L225.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z'],
+  trash:['0 0 448 512','M135.2 17.7L128 32 32 32C14.3 32 0 46.3 0 64S14.3 96 32 96l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-96 0-7.2-14.3C307.4 6.8 296.3 0 284.2 0L163.8 0c-12.1 0-23.2 6.8-28.6 17.7zM416 128L32 128 53.2 467c1.6 25.3 22.6 45 47.9 45l245.8 0c25.3 0 46.3-19.7 47.9-45L416 128z'],
+  pen:['0 0 512 512','M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.3 220.3 291.3 90.3z'],
+  grip:['0 0 320 512','M40 352l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zm192 0l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zM40 320c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0zm192-128l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40zM40 64l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48C0 81.9 17.9 64 40 64zM232 64l48 0c22.1 0 40 17.9 40 40l0 48c0 22.1-17.9 40-40 40l-48 0c-22.1 0-40-17.9-40-40l0-48c0-22.1 17.9-40 40-40z'],
+  mobile:['0 0 384 512','M16 64C16 28.7 44.7 0 80 0L304 0c35.3 0 64 28.7 64 64l0 384c0 35.3-28.7 64-64 64L80 512c-35.3 0-64-28.7-64-64L16 64zM224 448a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM304 64L80 64l0 320 224 0 0-320z'],
+  plus:['0 0 448 512','M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z'],
+  bars:['0 0 448 512','M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z'],
+  check:['0 0 448 512','M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'],
+  rotate:['0 0 512 512','M125.7 160l50.3 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L48 224c-17.7 0-32-14.3-32-32L16 64c0-17.7 14.3-32 32-32s32 14.3 32 32l0 51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z'],
+};
+function ic(name){ const i=ICONS[name]; return i ? `<svg class="ico" viewBox="${i[0]}" aria-hidden="true"><path d="${i[1]}"/></svg>` : ''; }
+function fillIcons(root){ (root||document).querySelectorAll('[data-ico]').forEach(el=>{ el.innerHTML=ic(el.dataset.ico)+(el.dataset.txt?' '+el.dataset.txt:''); }); }
+
 let uid = 1;
 function nid(){ return 'b'+(uid++); }
 
 const state = {
-  view:'edit',
+  view:'home',
   title:'',
   participants:8,
   blocks:[],
-  // run-time
-  idx:0,
-  actuals:{},          // id -> actual seconds
+  single:null,         // the one-off timer config
   meetingStart:0,
 };
 
@@ -512,6 +674,20 @@ let personIdx=0, phase='running';                 // phase: 'running' | 'hold' (
 let personStart=0, personPaused=0, personPauseStart=0, paused=false, personChimed=false;
 let personActuals=[];                             // actual active seconds per person in current block
 const SEG_CAP=12; // forum-sized; beyond this we don't slice the bar
+
+/* ---- what's currently being run (shared by full-session and single-timer modes) ---- */
+let runMode='session';   // 'session' (full schedule) | 'single' (one-off timer)
+let runBlocks=[];        // session: the schedule; single: [oneBlock]
+let runIdx=0;            // how far we've progressed (blocks before this are done)
+let selectedIdx=0;       // which block the Get-Ready screen will start next
+let runActuals={};       // id -> actual seconds
+let sessionActive=false; // a full session is in progress (enables "Resume" from the editor)
+function curBlock(){ return runBlocks[runIdx]; }
+function enterReady(){
+  if(!runBlocks.length){ showView('edit'); return; }
+  if(runIdx>=runBlocks.length) runIdx=Math.max(0,runBlocks.length-1);
+  selectedIdx=runIdx; showView('ready'); renderReady();
+}
 
 /* ---------- model helpers ---------- */
 function peopleOf(b){
@@ -603,14 +779,22 @@ function loadFromHash(){
   if(!h) return false;
   try{ return decodeState(h); }catch(e){ return false; }
 }
-const LS_KEY='eoForumTimer.v1';
+const LS_KEY='eoForumTimer.v1', SG_KEY='eoForumTimer.single';
 function loadFromStorage(){
   try{ const s=localStorage.getItem(LS_KEY); return s ? decodeState(s) : false; }catch(e){ return false; }
 }
 function saveToStorage(){
   try{ localStorage.setItem(LS_KEY, encodeState()); }catch(e){}
 }
-function syncHash(){ history.replaceState(null,'', '#'+encodeState()); saveToStorage(); }
+// persist to localStorage only; the URL hash is written only on "Copy link" (so a clean visit lands on Home)
+function syncHash(){ saveToStorage(); }
+function loadSingle(){
+  let s=null;
+  try{ const raw=localStorage.getItem(SG_KEY); if(raw) s=JSON.parse(raw); }catch(e){}
+  state.single = Object.assign({ name:'Timer', color:COLORS[0], type:TYPES.FIXED, minutes:5, people:4 }, s||{});
+  state.single.id='sg'; state.single.linkPeople=false; state.single.note='';
+}
+function saveSingle(){ try{ localStorage.setItem(SG_KEY, JSON.stringify(state.single)); }catch(e){} }
 
 /* ============================================================
    Standard EO Forum agenda (the default) — matches the EO
@@ -652,11 +836,14 @@ const $ = id => document.getElementById(id);
 
 function showView(v){
   state.view=v;
+  $('home').classList.toggle('hidden', v!=='home');
   $('editor').classList.toggle('hidden', v!=='edit');
   $('summary').classList.toggle('hidden', v!=='edit');
+  $('single').classList.toggle('hidden', v!=='single');
   $('ready').classList.toggle('hidden', v!=='ready');
   $('run').classList.toggle('hidden', v!=='run');
   $('end').classList.toggle('hidden', v!=='end');
+  $('singleEnd').classList.toggle('hidden', v!=='singleEnd');
   $('help').classList.toggle('hidden', v!=='help');
 }
 
@@ -699,12 +886,12 @@ function blockCard(b,i){
 
   // top row
   const top=document.createElement('div'); top.className='top';
-  const handle=document.createElement('div'); handle.className='handle'; handle.textContent='⠿'; handle.title='Drag to reorder';
+  const handle=document.createElement('div'); handle.className='handle'; handle.innerHTML=ic('grip'); handle.title='Drag to reorder';
   handle.addEventListener('pointerdown',e=>startDrag(card,i,e));
   const sw=document.createElement('button'); sw.className='swatch'; sw.style.background=b.color;
   const name=document.createElement('input'); name.className='name'; name.value=b.name; name.placeholder='Activity name';
   name.addEventListener('input',()=>{ b.name=name.value; renderSummary(); syncHash(); });
-  const del=iconBtn('🗑',()=>{ state.blocks.splice(i,1); renderEditor(); });
+  const del=iconBtn(ic('trash'),()=>{ state.blocks.splice(i,1); renderEditor(); });
   top.append(handle,sw,name,del); card.appendChild(top);
 
   // body
@@ -752,7 +939,7 @@ function blockCard(b,i){
     pplCol.append(pplLbl,ppl); mini.appendChild(pplCol);
 
     const link=document.createElement('button'); link.className='linkbtn'+(b.linkPeople?' on':'');
-    link.textContent = b.linkPeople?'🔗 All':'🔓 Set';
+    link.innerHTML = ic('link')+(b.linkPeople?' All':' Set');
     link.title='Link to default participants';
     link.addEventListener('click',()=>{ b.linkPeople=!b.linkPeople; if(b.linkPeople) b.people=state.participants; renderEditor(); });
     const linkCol=document.createElement('div'); linkCol.style.flex='0 0 auto';
@@ -784,7 +971,7 @@ function hintText(b){
 }
 
 function iconBtn(label,fn){
-  const b=document.createElement('button'); b.className='iconbtn'; b.textContent=label;
+  const b=document.createElement('button'); b.className='iconbtn'; b.innerHTML=label;
   b.addEventListener('click',fn); return b;
 }
 function move(i,dir){
@@ -854,6 +1041,7 @@ function renderSummary(){
   const end=new Date(Date.now()+tot*1000);
   $('endHint').textContent = tot>0 ? `If you start now, ends ~${clockTime(end)}` : 'Add an activity to begin';
   $('startBtn').disabled = state.blocks.length===0;
+  $('startBtn').textContent = sessionActive ? 'Resume meeting ▶' : 'Start meeting ▶';
 }
 
 /* ============================================================
@@ -862,17 +1050,18 @@ function renderSummary(){
 function driftSec(){
   // sum of actual-planned over completed blocks
   let d=0;
-  for(let k=0;k<state.idx;k++){ const b=state.blocks[k]; if(b.id in state.actuals) d += state.actuals[b.id]-totalSec(b); }
+  for(let k=0;k<runIdx;k++){ const b=runBlocks[k]; if(b.id in runActuals) d += runActuals[b.id]-totalSec(b); }
   return d;
 }
 function remainingPlanned(){
-  let r=0; for(let k=state.idx;k<state.blocks.length;k++) r+=totalSec(state.blocks[k]); return r;
+  let r=0; for(let k=runIdx;k<runBlocks.length;k++) r+=totalSec(runBlocks[k]); return r;
 }
 
 function renderReady(){
-  const first = state.idx===0;
-  $('readyKicker').textContent = first ? 'Get ready' : `Activity ${state.idx} done · ready for next`;
-  const b=state.blocks[state.idx];
+  const first = runIdx===0;
+  if(selectedIdx<runIdx || selectedIdx>=runBlocks.length) selectedIdx=runIdx;
+  $('readyKicker').textContent = first ? 'Get ready' : `Activity ${runIdx} done · ready for next`;
+  const sel=runBlocks[selectedIdx];
 
   // status row (show after first block)
   const sr=$('statusRow'); sr.innerHTML='';
@@ -884,36 +1073,90 @@ function renderReady(){
   sr.appendChild(stat('Projected end', clockTime(projEnd)));
   sr.appendChild(stat('Time left', fmtMins(remainingPlanned())));
 
-  // next card
-  $('nstripe').style.background=b.color;
-  $('nextName').textContent=b.name;
-  $('nextCard').style.boxShadow=`inset 0 0 0 1px ${b.color}33`;
-  $('nextDur').textContent=fmt(totalSec(b));
-  $('nextMeta').textContent = ppLabel(b);
-  $('nextNote').textContent = b.note||'';
-  $('startBlockBtn').textContent = `Start: ${b.name} ▶`;
-  $('startBlockBtn').style.background=b.color;
-  $('startBlockBtn').style.color=contrast(b.color);
+  // selected card
+  $('readyUpLbl').textContent = selectedIdx===runIdx ? 'Up next' : 'Selected';
+  $('nstripe').style.background=sel.color;
+  $('nextName').textContent=sel.name;
+  $('nextCard').style.boxShadow=`inset 0 0 0 1px ${sel.color}33`;
+  $('nextDur').textContent=fmt(totalSec(sel));
+  $('nextMeta').textContent = ppLabel(sel);
+  $('nextNote').textContent = sel.note||'';
+  $('startBlockBtn').textContent = `Start: ${sel.name} ▶`;
+  $('startBlockBtn').style.background=sel.color;
+  $('startBlockBtn').style.color=contrast(sel.color);
 
-  // upcoming list w/ reorder
+  // schedule list — grip (left) to reorder, tap row to SELECT it (bottom button runs it)
   const ul=$('upList'); ul.innerHTML='';
-  state.blocks.forEach((bl,k)=>{
+  runBlocks.forEach((bl,k)=>{
+    const done=k<runIdx;
     const row=document.createElement('div');
-    row.className='uprow'+(k<state.idx?' done':'')+(k===state.idx?' cur':'');
+    row.className='uprow'+(done?' done':' tappable')+(k===selectedIdx?' cur':'');
+    const grip=document.createElement('div'); grip.className='grip'; grip.innerHTML=ic('grip'); grip.title='Drag to reorder';
     const dot=document.createElement('div'); dot.className='dot'; dot.style.background=bl.color;
     const nm=document.createElement('div'); nm.className='un'; nm.textContent=bl.name;
     const t=document.createElement('div'); t.className='ut';
-    t.textContent = (k<state.idx && bl.id in state.actuals) ? fmt(state.actuals[bl.id]) : fmt(totalSec(bl));
-    row.append(dot,nm,t);
-    if(k>=state.idx){
-      const u=document.createElement('button'); u.className='mv'; u.textContent='↑';
-      u.addEventListener('click',()=>{ if(k>state.idx){ swap(k,k-1); renderReady(); }});
-      const dn=document.createElement('button'); dn.className='mv'; dn.textContent='↓';
-      dn.addEventListener('click',()=>{ if(k<state.blocks.length-1){ swap(k,k+1); renderReady(); }});
-      row.append(u,dn);
+    t.textContent = (done && bl.id in runActuals) ? fmt(runActuals[bl.id]) : fmt(totalSec(bl));
+    const check=document.createElement('div'); check.className='selck'; check.innerHTML=ic('check');
+    if(!done){
+      grip.addEventListener('pointerdown',e=>startReadyDrag(row,k,e));
+      grip.addEventListener('click',e=>e.stopPropagation());
+      row.append(grip,dot,nm,t,check);
+      row.addEventListener('click',()=>selectReadyBlock(k));
+    } else {
+      grip.classList.add('disabled');
+      row.append(grip,dot,nm,t);
     }
     ul.appendChild(row);
   });
+}
+function selectReadyBlock(k){ if(readyJustDragged) return; selectedIdx=k; renderReady(); }
+function startSelected(){
+  if(selectedIdx!==runIdx){ const item=runBlocks.splice(selectedIdx,1)[0]; runBlocks.splice(runIdx,0,item); selectedIdx=runIdx; }
+  startBlock();
+}
+
+/* ---- drag to reorder the Get-Ready schedule (grip handle; row tap = start) ---- */
+let readyDrag=null, readyJustDragged=false;
+function startReadyDrag(row,k,e){
+  if(e.button===1||e.button===2) return;
+  e.preventDefault(); e.stopPropagation();
+  const ul=$('upList'); const rect=row.getBoundingClientRect();
+  const ghost=row.cloneNode(true); ghost.classList.add('drag-ghost'); ghost.classList.remove('drag-src');
+  ghost.style.width=rect.width+'px'; ghost.style.left=rect.left+'px'; ghost.style.top=rect.top+'px';
+  document.body.appendChild(ghost);
+  const ph=document.createElement('div'); ph.className='uprow phRow'; ph.style.height=rect.height+'px';
+  ul.classList.add('dragging'); row.classList.add('drag-src'); ul.insertBefore(ph,row);
+  readyDrag={index:k, offsetY:e.clientY-rect.top, left:rect.left, ghost, ph, dropIndex:k};
+  try{ e.target.setPointerCapture(e.pointerId); }catch(_){}
+  document.addEventListener('pointermove',onReadyDrag);
+  document.addEventListener('pointerup',endReadyDrag);
+  document.addEventListener('pointercancel',endReadyDrag);
+}
+function onReadyDrag(e){
+  if(!readyDrag) return; e.preventDefault();
+  readyDrag.ghost.style.top=(e.clientY-readyDrag.offsetY)+'px';
+  readyDrag.ghost.style.left=readyDrag.left+'px';
+  const ul=$('upList');
+  const rows=[...ul.querySelectorAll('.uprow:not(.drag-src):not(.phRow)')];
+  let k=rows.length;
+  for(let j=0;j<rows.length;j++){ const r=rows[j].getBoundingClientRect(); if(e.clientY<r.top+r.height/2){ k=j; break; } }
+  if(k>=rows.length) ul.appendChild(readyDrag.ph); else ul.insertBefore(readyDrag.ph,rows[k]);
+  readyDrag.dropIndex=k;
+  const m=84,sp=16; if(e.clientY<m) window.scrollBy(0,-sp); else if(e.clientY>innerHeight-m) window.scrollBy(0,sp);
+}
+function endReadyDrag(){
+  if(!readyDrag) return;
+  const from=readyDrag.index, to=readyDrag.dropIndex;
+  readyDrag.ghost.remove(); readyDrag.ph.remove(); $('upList').classList.remove('dragging');
+  document.removeEventListener('pointermove',onReadyDrag);
+  document.removeEventListener('pointerup',endReadyDrag);
+  document.removeEventListener('pointercancel',endReadyDrag);
+  readyDrag=null;
+  const item=runBlocks.splice(from,1)[0];
+  runBlocks.splice(Math.max(0,Math.min(to,runBlocks.length)),0,item);
+  selectedIdx=runIdx;
+  readyJustDragged=true; setTimeout(()=>{ readyJustDragged=false; },60);
+  renderReady();
 }
 function swap(i,j){ const [x]=state.blocks.splice(i,1); state.blocks.splice(j,0,x); }
 function stat(k,v,cls){
@@ -930,13 +1173,62 @@ function contrast(hex){
 }
 
 /* ============================================================
+   SINGLE-TIMER setup
+   ============================================================ */
+function renderSingle(){
+  const s=state.single;
+  $('sgName').value = s.name==='Timer' ? '' : s.name;
+  // type segmented
+  [...$('sgType').children].forEach(btn=> btn.classList.toggle('on', btn.dataset.t===s.type));
+  $('sgMinLbl').textContent = s.type===TYPES.PERPERSON ? 'Minutes / person' : 'Total minutes';
+  $('sgMin').value = s.minutes;
+  $('sgPeopleCol').style.display = s.type===TYPES.FIXED ? 'none' : '';
+  $('sgPeople').value = s.people;
+  // palette
+  const pal=$('sgPalette'); pal.innerHTML='';
+  COLORS.forEach(c=>{
+    const p=document.createElement('button'); p.className='p'+(c===s.color?' on':''); p.style.background=c;
+    p.addEventListener('click',()=>{ s.color=c; saveSingle(); renderSingle(); });
+    pal.appendChild(p);
+  });
+  $('sgHint').innerHTML = hintText(s);
+}
+function sgSetType(t){ state.single.type=t; if(t!==TYPES.FIXED && (!state.single.people||state.single.people<1)) state.single.people=4; saveSingle(); renderSingle(); }
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+let navFrom='home', helpReturn='home';
+function openNav(){ navFrom=state.view; markNav(); $('navSheet').classList.remove('hidden'); }
+function closeNav(){ $('navSheet').classList.add('hidden'); }
+function markNav(){
+  const map={home:'home',edit:'edit',single:'single'};
+  const cur=map[state.view]||'';
+  $('navSheet').querySelectorAll('.navItem').forEach(b=> b.classList.toggle('cur', b.dataset.nav===cur));
+}
+function goTo(dest){
+  closeNav();
+  clearInterval(timer); releaseWake();
+  if(dest==='home'){ sessionActive=false; showView('home'); }
+  else if(dest==='edit'){ renderEditor(); showView('edit'); }
+  else if(dest==='single'){ renderSingle(); showView('single'); }
+  else if(dest==='help'){ openHelp(navFrom); }
+}
+function openHelp(from){ helpReturn=from||'home'; showView('help'); window.scrollTo(0,0); }
+
+/* ============================================================
    RUNNING
    ============================================================ */
 function startMeeting(){
   if(state.blocks.length===0) return;
   unlockAudio();
-  state.idx=0; state.actuals={}; state.meetingStart=Date.now();
-  showView('ready'); renderReady();
+  runMode='session'; runBlocks=state.blocks; runIdx=0; runActuals={}; sessionActive=true; state.meetingStart=Date.now();
+  enterReady();
+}
+function startSingle(){
+  unlockAudio();
+  runMode='single'; runBlocks=[state.single]; runIdx=0; runActuals={};
+  startBlock();
 }
 function segmentsFor(b){
   if(b.type===TYPES.FIXED) return 1;
@@ -944,9 +1236,10 @@ function segmentsFor(b){
   return (p>1 && p<=SEG_CAP) ? p : 1;
 }
 function startBlock(){
-  const b=state.blocks[state.idx];
+  const b=curBlock();
   $('runName').textContent=b.name;
-  $('runIx').textContent=`${state.idx+1} / ${state.blocks.length}`;
+  $('runIx').style.display = runMode==='single' ? 'none' : '';
+  $('runIx').textContent=`${runIdx+1} / ${runBlocks.length}`;
   const col=b.color;
   $('run').style.background=shade(col,-0.78);
   $('overTag').textContent='Overtime';
@@ -993,7 +1286,7 @@ function paintBars(b, activeHeight){
 }
 function tick(){
   if(phase!=='running') return;
-  const b=state.blocks[state.idx];
+  const b=curBlock();
   const elapsed=personElapsed();
   const remaining=segDur-elapsed;
   const clock=$('runClock');
@@ -1017,9 +1310,9 @@ function tick(){
   const blockRemain=(segCount-1-personIdx)*segDur + Math.max(0,remaining);
   const projEnd=new Date(Date.now() + blockRemain*1000 + remainingAfterCurrent()*1000);
   $('runEnd').textContent='ends ~'+clockTime(projEnd);
-  const over = driftSec() + Math.max(0,-remaining);
-  if(state.idx>0 || remaining<0){
-    const p=pacePhrase(over);
+  // schedule pace only matters for a multi-block session
+  if(runMode==='session' && (runIdx>0 || remaining<0)){
+    const p=pacePhrase(driftSec() + Math.max(0,-remaining));
     $('runDrift').textContent = p.text;
     $('runDrift').style.color = p.cls==='pos'?'var(--danger)':p.cls==='neg'?'var(--good)':'#fff';
     $('runDrift').style.display='';
@@ -1027,7 +1320,7 @@ function tick(){
 }
 function renderHold(){
   // between per-person timers: paused, waiting for the timekeeper to start the next person
-  const b=state.blocks[state.idx];
+  const b=curBlock();
   clearInterval(timer);
   paintBars(b, 100); // current person column shown full & dim (armed, not started)
   $('runClock').textContent=fmt(segDur); $('runClock').classList.remove('over');
@@ -1039,7 +1332,9 @@ function renderHold(){
   updateRunFooter();
 }
 function updateRunFooter(){
-  const pause=$('pauseBtn'), done=$('doneBtn');
+  const prev=$('prevBtn'), pause=$('pauseBtn'), done=$('doneBtn');
+  const seg = segCount>1, showPrev = seg && personIdx>0;
+  prev.style.display = showPrev ? '' : 'none';
   if(phase==='hold'){
     pause.style.display='none';
     done.textContent=`Start Person ${personIdx+1} ▶`;
@@ -1047,11 +1342,18 @@ function updateRunFooter(){
     pause.style.display='';
     pause.textContent = paused?'Resume':'Pause';
     const last = personIdx>=segCount-1;
-    done.textContent = segCount>1 ? (last?'Finish ✓':'Next person ▶') : 'Done ✓';
+    done.textContent = seg ? (last?'Finish ✓':(showPrev?'Next ▶':'Next person ▶')) : 'Done ✓';
   }
 }
+// step back to the previous person (e.g. you hit Next by mistake)
+function prevPerson(){
+  if(segCount<=1 || personIdx<=0) return;
+  clearInterval(timer); paused=false; $('run').style.opacity='1';
+  personIdx--;
+  phase='hold'; renderHold();   // land on the previous person, armed to restart
+}
 function remainingAfterCurrent(){
-  let r=0; for(let k=state.idx+1;k<state.blocks.length;k++) r+=totalSec(state.blocks[k]); return r;
+  let r=0; for(let k=runIdx+1;k<runBlocks.length;k++) r+=totalSec(runBlocks[k]); return r;
 }
 function togglePause(){
   if(phase!=='running') return;
@@ -1071,13 +1373,25 @@ function doneBtnClick(){
   }
 }
 function finishBlock(){
-  const b=state.blocks[state.idx];
+  const b=curBlock();
   let act=0; for(const v of personActuals) act += v||0;
-  state.actuals[b.id]=act;
+  runActuals[b.id]=act;
   clearInterval(timer); $('run').style.opacity='1'; paused=false;
-  state.idx++;
-  if(state.idx<state.blocks.length){ showView('ready'); renderReady(); }
-  else { releaseWake(); renderEnd(); showView('end'); }
+  if(runMode==='single'){ releaseWake(); renderSingleEnd(); showView('singleEnd'); return; }
+  runIdx++;
+  if(runIdx<runBlocks.length){ enterReady(); }
+  else { sessionActive=false; releaseWake(); renderEnd(); showView('end'); }
+}
+function renderSingleEnd(){
+  const b=runBlocks[0];
+  const a=runActuals[b.id]??0, p=totalSec(b), d=a-p;
+  $('seName').textContent=b.name;
+  $('seStripe').style.background=b.color;
+  $('seUsed').textContent=fmt(a);
+  $('sePlan').textContent='of '+fmt(p)+' planned';
+  const sign=d>0?'+':'';
+  $('seDelta').textContent = Math.abs(d)<1 ? 'right on time' : `${sign}${fmt(d)} (${d>0?'over':'under'})`;
+  $('seDelta').style.color = Math.abs(d)<1?'var(--muted)':(d>0?'var(--danger)':'var(--good)');
 }
 
 /* ============================================================
@@ -1086,8 +1400,8 @@ function finishBlock(){
 function renderEnd(){
   const list=$('endList'); list.innerHTML='';
   let plan=0,act=0;
-  state.blocks.forEach(b=>{
-    const p=totalSec(b), a=state.actuals[b.id]??0; plan+=p; act+=a;
+  runBlocks.forEach(b=>{
+    const p=totalSec(b), a=runActuals[b.id]??0; plan+=p; act+=a;
     const d=a-p; const sign=d>0?'+':'';
     const row=document.createElement('div'); row.className='erow';
     row.innerHTML=`<div class="dot" style="background:${b.color}"></div>
@@ -1147,7 +1461,8 @@ document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==
    Share link
    ============================================================ */
 function shareLink(){
-  syncHash();
+  saveToStorage();
+  history.replaceState(null,'', '#'+encodeState());   // put the schedule in the URL for sharing
   const url=location.href;
   const done=()=>toast('Link copied — paste anywhere to reload this schedule');
   if(navigator.clipboard && window.isSecureContext){
@@ -1193,44 +1508,93 @@ $('addBlock').addEventListener('click',()=>{
 });
 $('shareBtn').addEventListener('click',shareLink);
 $('shareTop').addEventListener('click',shareLink);
-$('helpTop').addEventListener('click',()=>{ showView('help'); window.scrollTo(0,0); });
-$('helpBack').addEventListener('click',()=>showView('edit'));
-$('helpDone').addEventListener('click',()=>showView('edit'));
 $('resetBtn').addEventListener('click',resetToStandard);
-$('startBtn').addEventListener('click',startMeeting);
+$('startBtn').addEventListener('click',()=>{ if(sessionActive) enterReady(); else startMeeting(); });
+$('readyEdit').addEventListener('click',()=>{ renderEditor(); showView('edit'); });
 
-$('startBlockBtn').addEventListener('click',startBlock);
-$('readyClose').addEventListener('click',()=>{ if(confirm('End meeting and return to editor?')){ releaseWake(); showView('edit'); renderEditor(); }});
+// home
+$('goFull').addEventListener('click',()=>{ renderEditor(); showView('edit'); });
+$('goSingle').addEventListener('click',()=>{ renderSingle(); showView('single'); });
+$('goHelpHome').addEventListener('click',()=>openHelp('home'));
 
+// nav menu
+$('menuEdit').addEventListener('click',openNav);
+$('menuSingle').addEventListener('click',openNav);
+$('menuReady').addEventListener('click',openNav);
+$('menuEnd').addEventListener('click',openNav);
+$('navBackdrop').addEventListener('click',closeNav);
+$('navSheet').querySelectorAll('.navItem').forEach(b=> b.addEventListener('click',()=>goTo(b.dataset.nav)));
+
+// help
+$('helpBack').addEventListener('click',()=>showView(helpReturn));
+$('helpDone').addEventListener('click',()=>showView(helpReturn));
+
+// single-timer setup
+[...$('sgType').children].forEach(btn=> btn.addEventListener('click',()=>sgSetType(btn.dataset.t)));
+$('sgName').addEventListener('input',()=>{ state.single.name=$('sgName').value.trim()||'Timer'; saveSingle(); });
+$('sgMin').addEventListener('input',()=>{ state.single.minutes=$('sgMin').value; $('sgHint').innerHTML=hintText(state.single); saveSingle(); });
+$('sgPeople').addEventListener('input',()=>{ const v=parseInt($('sgPeople').value); state.single.people=isNaN(v)?'':v; $('sgHint').innerHTML=hintText(state.single); saveSingle(); });
+$('sgPeople').addEventListener('blur',()=>{ let v=parseInt($('sgPeople').value); if(isNaN(v)||v<1)v=1; state.single.people=v; $('sgPeople').value=v; saveSingle(); });
+$('sgStart').addEventListener('click',()=>{
+  let m=parseFloat($('sgMin').value); if(isNaN(m)||m<=0){ $('sgMin').focus(); return; }
+  state.single.minutes=m;
+  if(state.single.type!==TYPES.FIXED){ let p=parseInt($('sgPeople').value); state.single.people=(isNaN(p)||p<1)?1:p; }
+  state.single.name=$('sgName').value.trim()||'Timer';
+  saveSingle(); startSingle();
+});
+
+// meeting run controls
+$('startBlockBtn').addEventListener('click',startSelected);
+$('prevBtn').addEventListener('click',prevPerson);
 $('pauseBtn').addEventListener('click',togglePause);
 $('doneBtn').addEventListener('click',doneBtnClick);
-$('runClose').addEventListener('click',()=>{ if(confirm('End meeting?')){ clearInterval(timer); releaseWake(); state.idx=state.blocks.length; renderEnd(); showView('end'); }});
+// run ✕ → back to the overview (Get Ready for a session, setup for a single timer) — never straight to recap
+$('runClose').addEventListener('click',()=>{
+  clearInterval(timer); releaseWake();
+  if(runMode==='single'){ renderSingle(); showView('single'); }
+  else { enterReady(); }
+});
 
-$('endEdit').addEventListener('click',()=>{ showView('edit'); renderEditor(); });
+// session recap
+$('endEdit').addEventListener('click',()=>{ renderEditor(); showView('edit'); });
 $('endRestart').addEventListener('click',startMeeting);
 
+// single-timer done
+$('seNew').addEventListener('click',()=>{ renderSingle(); showView('single'); });
+$('seAgain').addEventListener('click',startSingle);
+$('seHome').addEventListener('click',()=>showView('home'));
+
 /* ---------- boot ---------- */
+loadSingle();
 if(location.search.indexOf('qa')>=0){
   loadDefaults(); renderEditor();
   const params=new URLSearchParams(location.search);
-  state.actuals={}; state.meetingStart=Date.now();
-  state.idx=parseInt(params.get('block')||'0');
+  runMode='session'; runBlocks=state.blocks; runActuals={}; state.meetingStart=Date.now();
+  runIdx=parseInt(params.get('block')||'0');
   const seed=parseInt(params.get('seed')||'0'); // inject drift (sec) across completed blocks
-  for(let k=0;k<state.idx;k++){ const pb=state.blocks[k]; state.actuals[pb.id]=totalSec(pb)+(k===0?seed:0); }
+  for(let k=0;k<runIdx;k++){ const pb=runBlocks[k]; runActuals[pb.id]=totalSec(pb)+(k===0?seed:0); }
   const qview=params.get('view');
-  if(qview==='ready'){ showView('ready'); renderReady(); }
-  else if(qview==='help'){ showView('help'); }
+  if(qview==='ready'){ enterReady(); }
+  else if(qview==='help'){ openHelp('home'); }
+  else if(qview==='home'){ showView('home'); }
+  else if(qview==='single'){ renderSingle(); showView('single'); }
+  else if(qview==='singleEnd'){ runMode='single'; runBlocks=[state.single]; runIdx=0; runActuals={'sg':state.single.type===TYPES.FIXED? totalSec(state.single)+90 : totalSec(state.single)}; renderSingleEnd(); showView('singleEnd'); }
+  else if(qview==='edit'){ if(params.get('resume')){ runMode='session'; runBlocks=state.blocks; runIdx=1; sessionActive=true; renderEditor(); } showView('edit'); }
+  else if(qview==='singleRun'){ if(params.get('pp')) state.single.type=TYPES.SHARED, state.single.minutes=24, state.single.people=6; startSingle(); }
   else {
     startBlock();
     const adv=parseInt(params.get('adv')||'0');
     for(let i=0;i<adv;i++) doneBtnClick();
   }
+  if(params.get('opennav')) openNav();
 } else {
-  // priority: shared URL link  >  last session (localStorage)  >  standard default
+  const hadHash = !!location.hash.replace(/^#/,'');
+  // shared URL link wins; else restore last session from localStorage; else standard default
   if(!loadFromHash() && !loadFromStorage()) loadDefaults();
   renderEditor();
-  showView('edit');
+  showView(hadHash ? 'edit' : 'home');   // a shared link opens the schedule; a clean visit lands on Home
 }
+fillIcons();   // render all static [data-ico] placeholders as inline SVGs
 </script>
 </body>
 </html>
